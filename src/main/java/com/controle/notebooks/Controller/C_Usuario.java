@@ -1,5 +1,6 @@
 package com.controle.notebooks.Controller;
 
+import com.controle.notebooks.Service.S_Usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class C_Usuario {
                                    @RequestParam("email") String email,
                                    @RequestParam("matricula") String matricula,
                                    @RequestParam("cargo") String cargo){
-
+        S_Usuario.cadastrarUsuario(nome,  cargo, matricula, email);
         return "usuario/cadastro";
     }
 }
